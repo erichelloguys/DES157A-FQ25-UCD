@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>JS Experiment 1</title>
+    </head>
+
+    <body>
+        <h1>JS Experiment 1</h1>
+        <h2>To see how the JavaScripts respond, please right click with your mouse or your touchpad and enter "Inspect Mode". Afterwards, select "Console" from the deck.</h2>
+        <h3>A program that takes lowercase letter and turns them all uppercase</h3>
+        <h3>A program that capitalizes every other letter (even or odd letters) in words in the string</h3>
+        <h3>A program that reverses the letters in each word in a string of words, but keeps the words in the same order.</h3>
+        <h3>A program that uses console.log to print all the numbers from 1 to 100; print "Fizz" for numbers divisible by 3, and print "Buzz" for numbers divisible by 5.</h3>
+
+        <script>
+            //A program that takes lowercase letter and turns them all uppercase
+            function convertCase(str) {
+                return str.toUpperCase();
+            }
+
+            let newString = "this text needs to be converted to upper case";
+            let uppercaseString = convertCase(newString);
+
+            console.log(uppercaseString);
+
+            //A program that capitalizes every other letter (even or odd letters) in words in the string
+            function caseLetter(unformattedString) {
+                const str = unformattedString[0] || unformattedString;
+
+                let result = '';
+
+                for (i = 0; i < str.length; i++) {
+                    if (i%2 === 0){
+                        result += str[i].toUpperCase();
+                    }
+                    else if (i%2 !== 0){
+                        result += str[i].toLowerCase();
+                    }
+                    else {
+                        result;
+                    }
+                }
+                return result;
+            }
+
+            var unformattedString = ["Tell me you love me without telling me."]
+
+            var changedString = caseLetter(unformattedString);
+
+            console.log(changedString);
+
+
+            //A program that reverses the letters in each word in a string of words, but keeps the words in the same order.
+            function reverseLetters(word){
+                return word.map(word =>
+                    word.split('').reverse().join('')
+                );
+            }
+
+            var stringOfWords = ["Apple", "Orange", "Grape", "Peach"];
+
+            const reversedWords = reverseLetters(stringOfWords);
+            console.log(reversedWords);
+
+            //A program that uses console.log to print all the numbers from 1 to 100; print "Fizz" for numbers divisible by 3, and print "Buzz" for numbers divisible by 5.
+
+            for (var i=1; i < 101; i++) {
+                if (i % 3 === 0){
+                    console.log("Fizz");
+                }
+                else if (i % 5 === 0){
+                    console.log("Buzz");
+                }
+                else {
+                    console.log(i);
+                }
+            }
+
+        </script>
+    </body>
+</html>

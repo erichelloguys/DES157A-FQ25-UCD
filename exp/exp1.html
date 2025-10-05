@@ -1,87 +1,132 @@
 <!DOCTYPE html>
 <html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JS Experimentation - Selections & Loops</title>
+</head>
+<body>
+    <h1>Experiment 1</h1>
+    <h2>Please right click an empty space on your screen to open the shortcut menu, then find "Inspect". After you enter inspection mode, please go to "Console." You will need it for the rest of the experiment!</h2>
 
-    <head>
-        <meta charset="UTF-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <h3>This program capitalizes only the first letter of every word typed in.</h3>
+    <p class="programOne"></p>
 
-        <link href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.min.css" rel="stylesheet">
-        <link href="styles.css" rel="stylesheet">
-        <title>JS Experiment 1</title>
-    </head>
+    <h3>This program capitalizes every other letter of the content typed in.</h3>
+    <p class="programTwo"></p>
 
-    <body>
-        <h1>JS Experiment 1</h1>
-        <h2>To see how the JavaScripts respond, please right click with your mouse or your touchpad and enter "Inspect Mode". Afterwards, select "Console" from the deck.</h2>
-        <h3>A program that takes lowercase letter and turns them all uppercase</h3>
-        <h3>A program that capitalizes every other letter (even or odd letters) in words in the string</h3>
-        <h3>A program that reverses the letters in each word in a string of words, but keeps the words in the same order.</h3>
-        <h3>A program that uses console.log to print all the numbers from 1 to 100; print "Fizz" for numbers divisible by 3, and print "Buzz" for numbers divisible by 5.</h3>
+    <h3>This program reverses the letters in each word but keeps the words in the same order.</h3>
+    <p class="programThree"></p>
 
-        <script>
-            //A program that takes lowercase letter and turns them all uppercase
-            function convertCase(str) {
-                return str.toUpperCase();
+    <h3>This program prints all the numbers from 1 to 100, with the exception of numbers divisible by 3 replaced by "Fizz" and numbers divisible by 5 (and not 3) replaced by "Buzz".</h3>
+    <p class="programFour"></p>
+
+    <h3>This program makes a pyramid using "#".</h3>
+    <p class="programFive"></p>
+
+    <script>
+
+    /*A program that takes lowercase letter and turns them all uppercase*/
+
+        var inputWord = prompt("Please type in anything you want!", "").toLowerCase();
+
+        var arrayWord = inputWord.split(" "); /*make an array*/
+
+        var mapWord = arrayWord.map(word => word[0].toUpperCase() + word.slice(1)); /*mapping a new variable and takes the first letter of the array and toUpperCase it; slice rejoins the rest of the word in the array.*/
+
+        var joinWord = mapWord.join(" "); /*put the entire array back together*/
+
+        var programOneWord = document.querySelector(".programOne");
+
+        if (programOneWord){
+            programOneWord.textContent = joinWord;
+        }
+
+        console.log(joinWord);
+
+    /*A program that capitalizes every other letter (even or odd letters) in words in the string*/
+
+        /*wondering if I should be using function for this*/
+        var everyOtherLetter = "";
+        var letterCount = 0; /*start counting letters*/
+
+        for (i = 0; i < inputWord.length; i ++){
+
+            var letter = inputWord[i];
+
+            if (letter === " ") { /*skips space and only counts letters. if a space is detected, everyOtherLetter makes sure to add a space instead of formatting uppercase*/
+                everyOtherLetter += " ";
+                continue;
+            }
+            
+            if (letterCount % 2 === 0) { /*this targets every odd numbered letter in the text*/
+                everyOtherLetter += letter.toUpperCase();
+            } else { /*the rest should be naturally excluded and stay lower case from inputWord*/
+                everyOtherLetter += letter;
             }
 
-            let newString = "this text needs to be converted to upper case";
-            let uppercaseString = convertCase(newString);
+            letterCount++ /*as long as for loop executes, letter is counting up.*/
+        }
 
-            console.log(uppercaseString);
+        var programTwoWord = document.querySelector(".programTwo");
+        if (programTwoWord){
+            programTwoWord.textContent = everyOtherLetter;
+        }
 
-            //A program that capitalizes every other letter (even or odd letters) in words in the string
-            function caseLetter(unformattedString) {
-                const str = unformattedString[0] || unformattedString;
+        console.log(everyOtherLetter);
 
-                let result = '';
+    /*A program that reverses the letters in each word in a string of words, but keeps the words in the same order*/
 
-                for (i = 0; i < str.length; i++) {
-                    if (i%2 === 0){
-                        result += str[i].toUpperCase();
+        var reverseLetter = inputWord
+        .split(" ") /*splits the whole sentence*/
+        .map(word => word.split("").reverse().join("")) /*splits the word, reverses each letter, joins back*/
+        .join(" "); /*joins the sentence back*/
+
+        var programThreeWord = document.querySelector(".programThree");
+        if (programThreeWord) {
+            programThreeWord.textContent = reverseLetter;
+        }
+
+        console.log(reverseLetter);
+
+    /*A program that uses console.log to print all the numbers from 1 to 100; print "Fizz" for numbers divisible by 3, and print "Buzz" for numbers divisible by 5*/
+
+        var printFizzBuzz = [];
+
+        for (var fizzBuzz =1; fizzBuzz < 101; fizzBuzz ++) {
+                        if (fizzBuzz % 3 === 0){
+                            console.log("Fizz");
+                            printFizzBuzz.push("Fizz");
+                        } else if (fizzBuzz % 5 === 0 && fizzBuzz % 3 !== 0){
+                            console.log("Buzz");
+                            printFizzBuzz.push("Buzz");
+                        } else {
+                            console.log(fizzBuzz);
+                            printFizzBuzz.push(fizzBuzz);
+                        }
                     }
-                    else if (i%2 !== 0){
-                        result += str[i].toLowerCase();
-                    }
-                    else {
-                        result;
-                    }
-                }
-                return result;
+
+        var programFourWord = document.querySelector(".programFour");
+        if (programFourWord) {
+            programFourWord.textContent = printFizzBuzz.join(", ");
+        }
+
+    /*A loop that calls console.log seven times to print out a triangle made of hashtags.*/
+
+        var hashTag = "";
+        var printHashTag = [];
+        var programFiveWord = document.querySelector(".programFive");
+
+        for (i = 1; i < 8 ; i ++) {
+            hashTag += "#";
+            console.log(hashTag);
+            printHashTag.push(hashTag);
+        }
+
+        if (programFiveWord) {
+                programFiveWord.innerHTML = printHashTag.join("<br>");
             }
 
-            var unformattedString = ["Tell me you love me without telling me."]
-
-            var changedString = caseLetter(unformattedString);
-
-            console.log(changedString);
-
-
-            //A program that reverses the letters in each word in a string of words, but keeps the words in the same order.
-            function reverseLetters(word){
-                return word.map(word =>
-                    word.split('').reverse().join('')
-                );
-            }
-
-            var stringOfWords = ["Apple", "Orange", "Grape", "Peach"];
-
-            const reversedWords = reverseLetters(stringOfWords);
-            console.log(reversedWords);
-
-            //A program that uses console.log to print all the numbers from 1 to 100; print "Fizz" for numbers divisible by 3, and print "Buzz" for numbers divisible by 5.
-
-            for (var i=1; i < 101; i++) {
-                if (i % 3 === 0){
-                    console.log("Fizz");
-                }
-                else if (i % 5 === 0){
-                    console.log("Buzz");
-                }
-                else {
-                    console.log(i);
-                }
-            }
-
-        </script>
-    </body>
+    </script>
+</body>
 </html>

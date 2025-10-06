@@ -5,7 +5,15 @@ body {
     background-size: cover;
     background-position:center;
     position: relative;
+}
+
+body #viewport {
     max-width: 1200px;
+    margin: auto;
+    padding: 0;
+    background-size: cover;
+    background-position:center;
+    position: relative;
 }
 
 body main {
@@ -24,6 +32,7 @@ header h1 {
 }
 
 header, footer {
+    text-align: center;
     background: linear-gradient(180deg, rgba(0,212,255,0.25) 0%, rgba(8,75,131,1) 100%);
     padding: 25px;
     margin: auto;

@@ -141,7 +141,6 @@ nav ul li {
 }
 
 nav ul li:hover {
-    color: azure;
     background-color: rgb(129, 106, 77);
 }
 
@@ -151,6 +150,9 @@ nav ul li a:hover {
 
 
 nav ul li a {
+    display: block;
+    width: 100%;
+    height: 100%;
     text-decoration: none;
     color: #666;
     font-family: "Ubuntu", sans-serif;
@@ -169,7 +171,6 @@ nav ul li a {
     will-change: transform;
     cursor: pointer;
 }
-  
 
 .bubble1 {
     position: relative;
@@ -233,6 +234,16 @@ nav ul li a {
     margin: auto;
 }
 
+.intro_img {
+    border-color: burlywood;
+    border-width: 0.3em;
+    border-style: dotted;
+}
+
+.intro_img:hover {
+    animation: shake 5s ease-in-out infinite;
+}
+
 .diona_head:hover {
     animation: nod 1s ease-in-out infinite;
 }
@@ -243,7 +254,7 @@ nav ul li a {
     }
 
     50% {
-       transform: rotate(-5deg);
+       transform: rotate(-10deg);
     }
 
     100% {
@@ -253,7 +264,7 @@ nav ul li a {
 
 @keyframes shake {
     0% {
-       transform: translate(0px, -10px);
+       transform: translate(0px, 0px);
     }
 
     20% {
@@ -261,19 +272,19 @@ nav ul li a {
     }
 
     40% {
-       transform: rotate(-5deg);
+       transform: rotate(-10deg);
     }
 
     60% {
-        transform: rotate(5deg);
+        transform: rotate(10deg);
     }
 
     80% {
        transform: translate(-10px, 5px);
     }
 
-    80% {
-        transform: translate(0px, 10px);
+    100% {
+        transform: translate(0px, 0px);
     }
 }
 

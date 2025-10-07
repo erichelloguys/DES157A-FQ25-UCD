@@ -4,6 +4,8 @@ body {
     background-image: url("images/IceBerg.jpg");
     background-size: cover;
     background-position:center;
+    background-blend-mode: lighten;
+    background-repeat: no-repeat;
 }
 
 body #viewport {
@@ -21,12 +23,19 @@ body main {
 }
 
 main section {
-    margin: 20px 20px 20px 20px;
+    margin: 20px;
     flex: 1;
 }
 
-header, body h1 {
+main section h3 {
+    color:#D7FFFF;
+    margin:auto;
     text-align: center;
+}
+
+main section p {
+    margin: 10px 0px 10px 10px;
+    line-height: 30px;
 }
 
 header, footer {
@@ -69,6 +78,10 @@ section img {
     text-align: center;
 }
 
+header, body h1 {
+    text-align: center;
+}
+
 h1 {
     color:#D7FFFF;
     margin-left: 10px;
@@ -86,7 +99,7 @@ h2 {
     margin-top: auto;
     margin-bottom: auto;
     font-family: "Rubik 80s Fade", system-ui;
-    font-weight: 400;
+    font-weight: 300;
     font-style: normal;
 }
 
@@ -95,29 +108,21 @@ h3 {
     font-size: 16px;
     margin-left: 10px;
     margin-right: 10px;
+    font-family: "Rubik 80s Fade", system-ui;
+    font-weight: 200;
+    font-style: normal;
 }
 
 p {
     font-family: "Ubuntu", sans-serif;
     margin-left: 20px;
     margin-right: 20px;
-    color: rgb(203, 215, 215);
+    color: rgb(218, 218, 218);
 }
 
 #sectioning {
     display: flex;
     flex-direction: column;
-}
-
-main section h3 {
-    color:#D7FFFF;
-    margin:auto;
-    text-align: center;
-}
-
-main section p {
-    margin: 10px 0px 10px 10px;
-    line-height: 30px;
 }
 
 nav ul {

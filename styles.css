@@ -17,11 +17,6 @@ body #viewport {
     position: relative;
 }
 
-body main {
-    margin: auto;
-    display: flex;
-}
-
 main section {
     margin: 20px;
     flex: 1;

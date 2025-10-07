@@ -28,7 +28,12 @@ main section {
 
 header h1 {
     text-align: center;
-    color:azure;
+    color:#D7FFFF;
+}
+
+body h1 {
+    color:#D7FFFF;
+    text-align: center;
 }
 
 header, footer {
@@ -71,7 +76,7 @@ h1 {
 
 h2 {
     font-size:20px;
-    color:#42BFDD;
+    color:#D7FFFF;
     margin-left: 10px;
     margin-right: 10px;
     margin-top: auto;
@@ -79,6 +84,7 @@ h2 {
 }
 
 h3 {
+    color: #D7FFFF;
     font-size: 16px;
     margin-left: 10px;
     margin-right: 10px;
@@ -87,7 +93,7 @@ h3 {
 p {
     margin-left: 20px;
     margin-right: 20px;
-    color:rgb(211, 211, 211);
+    color: rgb(203, 215, 215);
 }
 
 #sectioning {
@@ -96,7 +102,7 @@ p {
 }
 
 main section h3 {
-    color:#42BFDD;
+    color:#D7FFFF;
     margin:auto;
     text-align: center;
 }

@@ -42,6 +42,8 @@ header, footer {
     text-align: center;
     padding: 25px;
     margin: auto;
+    position: relative;
+    z-index: 1;
 }
 
 header {
@@ -234,6 +236,21 @@ nav ul li a {
     margin: auto;
 }
 
+#fish_container {
+    transform: translateX(75%) translateY(-50%);
+    position: absolute;
+}
+
+.fish {
+    animation: swim 5s ease-in-out infinite;
+    z-index: -1;
+    opacity: 0.5;
+    margin: auto;
+    display: block;
+    height: auto;
+    max-width: 100%;
+}
+
 .intro_img {
     border-color: burlywood;
     border-width: 0.3em;
@@ -298,18 +315,26 @@ nav ul li a {
 
 @keyframes floatBubble2 {
     0% {transform: translateY(100%); }
-    25% {transform: translateX(-50%)}
-    50% {transform: translateY(150%)}
-    75% {transform: translateX(50%)}
+    25% {transform: translateX(-50%); }
+    50% {transform: translateY(150%); }
+    75% {transform: translateX(50%); }
     100% { transform: translateY(100%); }
 }
 
 @keyframes floatBubble3 {
     0% {transform: translateY(150%); }
-    25% {transform: translateX(50%)}
-    50% {transform: translateY(100%)}
-    75% {transform: translateX(-50%)}
+    25% {transform: translateX(50%); }
+    50% {transform: translateY(100%); }
+    75% {transform: translateX(-50%); }
     100% { transform: translateY(150%); }
+}
+
+@keyframes swim {
+    0% {transform: translateX(-75%);}
+    25% {transform: translateX(75%) scaleX(-1);}
+    50% {transform: translateX(-75%);}
+    75% {transform: translateX(75%) scaleX(-1);}
+    100% {transform: translateX(-75%);}
 }
 
 @media only screen and (min-width: 600px) {

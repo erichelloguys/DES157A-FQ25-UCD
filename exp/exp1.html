@@ -15,6 +15,10 @@
 </head>
 <body>
 
+    <header>
+        <h1>DES157A JavaScript Experimentation - Selection & Loops</h1>
+    </header>
+
     <div id="nav-container">
         <nav>
             <h2 class="dropdown">Research</h2>
@@ -80,13 +84,17 @@
 
     <script>
 
-    /*A program that takes lowercase letter and turns them all uppercase*/
+    /*A program that capitalizes only the first letter of the word*/
 
         var inputWord = prompt("Please type in anything you want!", "").toLowerCase();
 
         var arrayWord = inputWord.split(" "); /*make an array*/
 
-        var mapWord = arrayWord.map(word => word[0].toUpperCase() + word.slice(1)); /*mapping a new variable and takes the first letter of the array and toUpperCase it; slice rejoins the rest of the word in the array.*/
+        var mapWord = arrayWord.map(
+            function(word){
+            return word[0].toUpperCase() + word.slice(1);}
+        )
+        /*mapping a new variable and takes the first letter of the array and toUpperCase it; slice rejoins the rest of the word in the array.*/
 
         var joinWord = mapWord.join(" "); /*put the entire array back together*/
 

@@ -83,7 +83,7 @@ h1 {
     color:#D7FFFF;
     margin-left: 10px;
     margin-right: 10px;
-    font-family: "Rubik 80s Fade", system-ui;
+    font-family: "Rubik Glitch", system-ui;
     font-weight: 400;
     font-style: normal;
 }
@@ -95,7 +95,7 @@ h2 {
     margin-right: 10px;
     margin-top: auto;
     margin-bottom: auto;
-    font-family: "Rubik 80s Fade", system-ui;
+    font-family: "Rubik Glitch", system-ui;
     font-weight: 300;
     font-style: normal;
 }
@@ -105,7 +105,7 @@ h3 {
     font-size: 16px;
     margin-left: 10px;
     margin-right: 10px;
-    font-family: "Rubik 80s Fade", system-ui;
+    font-family: "Rubik Glitch", system-ui;
     font-weight: 200;
     font-style: normal;
 }
@@ -343,8 +343,20 @@ nav ul li a {
     }
 
     h1, h2, h3 {
-        font-family: "Rubik Glitch", system-ui;
+        font-family: "Rubik 80s Fade", system-ui;;
         font-weight: 400;
+        font-style: normal;
+    }
+
+    h2 {
+        font-family: "Rubik 80s Fade", system-ui;;
+        font-weight: 300;
+        font-style: normal;
+    }
+
+    h3 {
+        font-family: "Rubik 80s Fade", system-ui;;
+        font-weight: 200;
         font-style: normal;
     }
 }

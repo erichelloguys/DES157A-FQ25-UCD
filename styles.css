@@ -341,5 +341,11 @@ nav ul li a {
     #sectioning {
         flex-direction: row;
     }
-}
 
+    h1, h2, h3 {
+        font-family: "Rubik Glitch", system-ui;
+        font-weight: 400;
+        font-style: normal;
+    }
+}
+  

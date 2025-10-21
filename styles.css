@@ -122,6 +122,10 @@ p {
     flex-direction: column;
 }
 
+nav {
+    z-index: 1;
+}
+
 nav ul {
     list-style-type: none;
     padding-left: 0;

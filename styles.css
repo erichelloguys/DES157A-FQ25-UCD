@@ -49,11 +49,27 @@ footer {
     background: linear-gradient(180deg, #366aaf 5%, #002D57 75%);
 }
 
+#top_button {
+    position: fixed;
+    z-index: 2;
+    background-color: rgb(222, 184, 135);
+    padding: 0.1em;
+    border: #42BFDD;
+    border-style: groove;
+    border-width: 0.2em;
+    text-decoration: none;
+}
+
 section img {
     max-width: 100%;
     height: auto;
     display: block;
     margin: auto;
+}
+
+main article #one {
+    max-width: 800px;
+    
 }
 
 #nav-container {

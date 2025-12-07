@@ -23,6 +23,25 @@ strong {
 
 }
 
+body #home_button {
+
+    position: fixed;
+    z-index: 4;
+    top: 10px;
+    left: 10px;
+
+    background-color: rgb(222, 184, 135);
+    padding: 0.1em;
+    border-color: burlywood;
+    border-style: groove;
+    border-width: 0.2em;
+    text-decoration: none;
+
+    display: inline-block;
+    height: auto;
+    max-width: 100%;
+}
+
 #graphics {
     flex: 2;
 }

@@ -18,6 +18,25 @@ main {
     gap: 20px;
 }
 
+body #home_button {
+
+    position: fixed;
+    z-index: 4;
+    top: 10px;
+    left: 10px;
+
+    background-color: rgb(222, 184, 135);
+    padding: 0.1em;
+    border-color: burlywood;
+    border-style: groove;
+    border-width: 0.2em;
+    text-decoration: none;
+
+    display: inline-block;
+    height: auto;
+    max-width: 100%;
+}
+
 strong {
     color: rgb(231, 237, 189);
 
@@ -43,7 +62,6 @@ strong {
     height: auto;
     margin: auto;
 }
-
 
 .chefArm {
     animation: wok 0.5s infinite;
@@ -88,13 +106,13 @@ p {
 
 #overlay {
     position: fixed;
-    background-color: rgba(140, 140, 140, 0.5);
+    background-color: rgba(140, 140, 140, 0.75);
     top: 0;
     left: 0;
     width: 100vw;
     height: 100vh;
 
-    z-index: 9999;
+    z-index: 3;
 }
 
 #overlay form {

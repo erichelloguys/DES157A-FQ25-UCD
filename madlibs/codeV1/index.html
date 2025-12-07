@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MadLibs CodeV1</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Rubik+80s+Fade&family=Rubik+Glitch&family=Ubuntu&display=swap" rel="stylesheet">
+
+    <link href="styles.css" rel="stylesheet">
+    <script src="script.js" defer></script>
+</head>
+<body>
+    <header>
+         <h1>The Clumsy Chef MadLibs</h1>
+    </header>
+
+    <main>
+
+        <div id="graphics">
+            <img class = "chefBody" src="images/chefBody.png" alt="chef" width="1200" height="750">
+
+            <img class = "chefArm" src="images/panHandle.png" alt="arm" width="1200" height="750">
+
+            <img class = "chicken" src="images/chicken.png" alt="chicken" width="1200" height="750">
+        </div>
+
+        <section id="madLib">
+            <p>
+                He still makes rookie mistakes, he still can't memorize the recipe. Even so, the customers <label for="verbOne">Verb</label> him because his dishes always turn out <label for="adjectiveOne">Adjective</label>. This <label for="adjectiveTwo">Adjective</label> style of cooking has attracted countless <label for="nounOne">Noun</label> to his restaurant, and despite only cooking with <label for="adjectiveThree">Adjective</label> ingredients every time, he never failed to <label for="verbTwo">Verb</label> a customer, earning him his fame and <label for="nounTwo">Noun</label> today.
+            </p>
+        </section>
+
+        <section id="overlay" class="showing">
+
+            <form id="myForm">
+                <label for="nounOne">Provide a noun</label>
+                <input type="text" id = "nounOne">
+                <br>
+
+                <label for="nounTwo">Provide another noun</label>
+                <input type="text" id = "nounTwo">
+                <br>
+
+                <label for="adjectiveOne">Provide an adjective</label>
+                <input type="text" id = "adjectiveOne">
+                <br>
+
+                <label for="adjectiveTwo">Provide an adjective</label>
+                <input type="text" id = "adjectiveTwo">
+                <br>
+
+                <label for="adjectiveThree">Provide an adjective</label>
+                <input type="text" id = "adjectiveThree">
+                <br>
+
+                <label for="verbOne">Provide a verb</label>
+                <input type="text" id = "verbOne">
+                <br>
+
+                <label for="verbTwo">Provide a verb</label>
+                <input type="text" id = "verbTwo">
+
+                <input type="submit" id="submit" value="Send">
+
+            </form>
+
+        </section>
+
+    </main>
+    <footer>
+    </footer> 
+</body>
+</html>

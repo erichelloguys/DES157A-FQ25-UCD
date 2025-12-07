@@ -18,6 +18,11 @@ main {
     gap: 20px;
 }
 
+strong {
+    color: rgb(231, 237, 189);
+
+}
+
 #graphics {
     flex: 2;
 }
@@ -41,7 +46,7 @@ main {
 
 
 .chefArm {
-    animation: wok 1s infinite;
+    animation: wok 0.5s infinite;
 }
 
 .chicken {
@@ -83,7 +88,7 @@ p {
 
 #overlay {
     position: fixed;
-    background-color: rgba(0,0,0,0.5);
+    background-color: rgba(140, 140, 140, 0.5);
     top: 0;
     left: 0;
     width: 100vw;
@@ -107,6 +112,11 @@ p {
 
 #overlay form label {
     font-family: "Ubuntu", sans-serif;
+    line-height: 40px;
+}
+
+#overlay form input {
+    border-color: burlywood;
 }
 
 @keyframes wok {

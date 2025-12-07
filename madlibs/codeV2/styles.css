@@ -1,0 +1,176 @@
+body {
+    font-family: arial;
+    padding-top: 200px;
+    line-height: 1.4em;
+
+    background-image: url("images/madLibsBG.png");
+    background-size: cover;
+    background-position:center center;
+    background-blend-mode: lighten;
+    background-repeat:no-repeat ;
+    min-height: 100vh;
+}
+
+main {
+    max-width: 900px;
+    margin: auto;
+    display: flex;
+    gap: 20px;
+}
+
+strong {
+    color: rgb(231, 237, 189);
+
+}
+
+#graphics {
+    flex: 2;
+}
+
+#madLib {
+    flex: 3;
+}
+
+#graphics img {
+    will-change: transform;
+    object-fit: contain;
+    cursor: pointer;
+    position: absolute;
+    top: 25%;
+
+    max-width: 100%;
+    display: block;
+    height: auto;
+    margin: auto;
+}
+
+
+.chefArm {
+    animation: wok 0.5s infinite;
+}
+
+.chicken {
+    animation: bounce 1s infinite;
+}
+
+header, footer {
+    text-align: center;
+    padding: 25px;
+    margin: auto;
+    position: relative;
+}
+
+header h1 {
+    top: 0;
+    text-align: center;
+    color: rgb(231, 237, 189);
+    font-family: "Rubik 80s Fade", system-ui;;
+    font-weight: 100;
+    font-size: 2em;
+}
+
+p {
+    font-family: "Ubuntu", sans-serif;
+    font-size: 20px;
+    line-height: 40px;
+    margin-left: 40px;
+    margin-right: 20px;
+    color: rgb(46, 47, 38);
+}
+
+.hidden {
+    display: none;
+}
+
+.showing {
+    display: block;
+}
+
+#overlay {
+    position: fixed;
+    background-color: rgba(140, 140, 140, 0.5);
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+
+    z-index: 9999;
+}
+
+#overlay form {
+    background-image: url(images/clover.png);
+    background-size: cover;
+    background-position:center center;
+    background-blend-mode: lighten;
+    background-repeat:no-repeat ;
+
+    box-sizing: border-box;
+    padding: 20px;
+    width: auto;
+    height: auto;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    overflow-y: scroll;
+}
+
+#overlay form label {
+    font-family: "Ubuntu", sans-serif;
+    line-height: 40px;
+}
+
+#overlay form input {
+    border-color: burlywood;
+}
+
+@keyframes wok {
+    0% {
+       transform: translate(0px, 0px);
+    }
+
+    50% {
+       transform: translate(5px, -5px);
+    }
+
+    100% {
+       transform: translate(0px, 0px);
+    }
+}
+
+@keyframes bounce {
+    0% {
+        transform: translate(0px, 0px);
+    }
+
+    50% {
+       transform: translate(5px, -100px);
+    }
+
+    100% {
+       transform: translate(0px, 0px);
+    }
+}
+
+@media (max-width: 600px) {
+    main {
+        flex-direction: column;
+    }
+
+    #graphics {
+        height: 250px;
+    }
+
+    #graphics img {
+        width: 80%;
+        height: auto;
+        top: 0;
+        left: 0;
+        transform: translateX(5);
+    }
+
+    h1 {
+        line-height: 30px;
+    }
+
+}

@@ -184,7 +184,7 @@ p {
         height: auto;
         top: 0;
         left: 0;
-        transform: translateX(5);
+        transform: translateX(5%);
     }
 
     h1 {

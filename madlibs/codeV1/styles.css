@@ -141,4 +141,21 @@ p {
     main {
         flex-direction: column;
     }
+
+    #graphics {
+        height: 250px;
+    }
+
+    #graphics img {
+        width: 80%;
+        height: auto;
+        top: 0;
+        left: 0;
+        transform: translateX(5);
+    }
+
+    h1 {
+        line-height: 30px;
+    }
+
 }

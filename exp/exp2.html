@@ -71,7 +71,8 @@
         const mainImage = document.querySelector('img');
 
         let rotation = 0;
-        let movement = 0;
+        let movementY = 0;
+        let movementX = 0;
 
         document.querySelector('#spinLeft').addEventListener('click', function(event){
             event.preventDefault();
@@ -93,27 +94,27 @@
             }
 
             if (event.key === 'W' || event.key === 'w'){
-                movement -= 1;
+                movementY -= 1;
 
-                mainImage.style.transform = `translateY(${movement}%)`
+                mainImage.style.transform = `translateY(${movementY}%)`
             }
 
             if (event.key === 'S' || event.key === 's'){
-                movement += 1;
+                movementY += 1;
                 
-                mainImage.style.transform = `translateY(${movement}%)`
+                mainImage.style.transform = `translateY(${movementY}%)`
             }
 
             if (event.key === 'A' || event.key === 'a'){
-                movement -= 1;
+                movementX -= 1;
                 
-                mainImage.style.transform = `translateX(${movement}%)`
+                mainImage.style.transform = `translateX(${movementX}%)`
             }
 
             if (event.key === 'D' || event.key === 'd'){
-                movement += 1;
+                movementX += 1;
                 
-                mainImage.style.transform = `translateX(${movement}%)`
+                mainImage.style.transform = `translateX(${movementX}%)`
             }
         })
 

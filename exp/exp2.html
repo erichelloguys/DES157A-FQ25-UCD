@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JS Experimentation - Selections & Loops</title>
+
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.min.css" rel="stylesheet">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Rubik+80s+Fade&family=Rubik+Glitch&family=Ubuntu&display=swap" rel="stylesheet">
+
+    <link href="../styles.css" rel="stylesheet">
+
+    <style>
+        .mashImg {
+            height: auto;
+            width: 50%;
+            display: block;
+            margin: auto;
+        }
+
+        button {
+            margin: 10px;
+        }
+
+        form {
+            margin: 10px;
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <h1>DES157A JavaScript Experimentation - Selection & Loops</h1>
+    </header>
+
+    <main>
+
+        <h1>Experiment 1: Rotate Image</h1>
+        <img src="images/mash.png" class="mashImg" alt="Mash Kyrielight" width="630" height="810">
+        <h2>Try out different controls to manipulate how this image behaves.</h2>
+
+        <h3>Rotate the image to the left or to the right using button controls.</h3>
+        <button id="spinLeft">Left</button>
+        <button id="spinRight">Right</button>
+
+        <h3>You can also move the image up or down across the page by using WASD on the keyboard. (W for up, A for left, S for down, D for right)</h3>
+        <button id="reset">Reset</button>
+
+        <h3>Change the opacity of this image by putting in a number from 0-100%.</h3>
+        <form>
+            <label for="opacity"></label>
+            <input type="number" id = "opacity">
+            <input type="submit" id="submit" value="Send">
+        </form>
+
+        <h3>Change all these prompts to a different color.</h3>
+        <button id="color">Random Color</button>
+
+        <footer class="stickyfooter">
+            <p>Designed by Hanjie Chen</p>
+            <address>
+                <p>Contact <a href="&#104;&#106;&#099;&#099;&#104;&#101;&#110;&#064;&#117;&#099;&#100;&#097;&#118;&#105;&#115;&#046;&#101;&#100;&#117;" style="color: rgb(218, 218, 218);">&#104;&#106;&#099;&#099;&#104;&#101;&#110;&#064;&#117;&#099;&#100;&#097;&#118;&#105;&#115;&#046;&#101;&#100;&#117;</a></p>
+            </address>
+        </footer>
+    </main>
+
+    <script>
+        const mainImage = document.querySelector('img');
+
+        let rotation = 0;
+        let movement = 0;
+
+        document.querySelector('#spinLeft').addEventListener('click', function(event){
+            event.preventDefault();
+
+            rotation -= 90;
+            mainImage.style.transform = `rotate(${rotation}deg)`;
+        });
+
+        document.querySelector('#spinRight').addEventListener('click', function(event){
+            event.preventDefault();
+
+            rotation += 90;
+            mainImage.style.transform = `rotate(${rotation}deg)`;
+        });
+
+        document.addEventListener('keydown', function(event){
+            if (['w', 'W', 'a', 'A', 's', 'S', 'd', 'D'].includes(event.key)){
+                event.preventDefault();
+            }
+
+            if (event.key === 'W' || event.key === 'w'){
+                movement -= 1;
+
+                mainImage.style.transform = `translateY(${movement}%)`
+            }
+
+            if (event.key === 'S' || event.key === 's'){
+                movement += 1;
+                
+                mainImage.style.transform = `translateY(${movement}%)`
+            }
+
+            if (event.key === 'A' || event.key === 'a'){
+                movement -= 1;
+                
+                mainImage.style.transform = `translateX(${movement}%)`
+            }
+
+            if (event.key === 'D' || event.key === 'd'){
+                movement += 1;
+                
+                mainImage.style.transform = `translateX(${movement}%)`
+            }
+        })
+
+        document.querySelector('#reset').addEventListener('click', function(event){
+            event.preventDefault();
+
+            movement = 0;
+            mainImage.style.transform = 'none';
+        });
+
+        document.querySelector('#submit').addEventListener('click', function(event){
+            event.preventDefault();
+
+            const opacityValue = document.querySelector('#opacity').value;
+
+            if (opacityValue <= 100 && opacityValue >= 0){
+                mainImage.style.opacity = opacityValue / 100;
+            }
+        })
+
+        document.querySelector('#color').addEventListener('click', function(event){
+            event.preventDefault();
+
+            const h3Value = document.querySelectorAll('h3');
+
+            const randomColor = `rgb(${Math.floor(Math.random() * 256)}, ${Math.floor(Math.random() * 256)}, ${Math.floor(Math.random() * 256)})`;
+
+            h3Value.forEach(function(h3){
+                h3.style.color = randomColor;
+            });
+
+        })
+
+    </script>
+</body>
+</html>

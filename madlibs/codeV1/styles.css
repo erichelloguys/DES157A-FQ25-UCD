@@ -18,11 +18,6 @@ main {
     gap: 20px;
 }
 
-strong {
-    color: rgb(231, 237, 189);
-
-}
-
 body #home_button {
 
     position: fixed;
@@ -40,6 +35,11 @@ body #home_button {
     display: inline-block;
     height: auto;
     max-width: 100%;
+}
+
+strong {
+    color: rgb(231, 237, 189);
+
 }
 
 #graphics {
@@ -62,7 +62,6 @@ body #home_button {
     height: auto;
     margin: auto;
 }
-
 
 .chefArm {
     animation: wok 0.5s infinite;
@@ -107,18 +106,23 @@ p {
 
 #overlay {
     position: fixed;
-    background-color: rgba(140, 140, 140, 0.5);
+    background-color: rgba(140, 140, 140, 0.75);
     top: 0;
     left: 0;
     width: 100vw;
     height: 100vh;
 
-    z-index: 9999;
+    z-index: 3;
 }
 
 #overlay form {
+    background-image: url(images/clover.png);
+    background-size: cover;
+    background-position:center center;
+    background-blend-mode: lighten;
+    background-repeat:no-repeat ;
+
     box-sizing: border-box;
-    background-color: #8dcaa0;
     padding: 20px;
     width: auto;
     height: auto;
@@ -180,7 +184,7 @@ p {
         height: auto;
         top: 0;
         left: 0;
-        transform: translateX(5);
+        transform: translateX(5%);
     }
 
     h1 {

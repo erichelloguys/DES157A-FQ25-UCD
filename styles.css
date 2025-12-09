@@ -71,6 +71,24 @@ header #top_button {
     max-width: 100%;
 }
 
+header #home_button {
+    transform: translateX(-35%) translateY(-100%);
+
+    position: fixed;
+    z-index: 2;
+    background-color: rgb(222, 184, 135);
+    padding: 0.1em;
+    border: #42BFDD;
+    border-style: groove;
+    border-width: 0.2em;
+    text-decoration: none;
+
+    margin: auto;
+    display: block;
+    height: auto;
+    max-width: 100%;
+}
+
 section img {
     max-width: 100%;
     height: auto;

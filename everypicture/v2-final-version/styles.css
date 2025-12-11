@@ -160,3 +160,24 @@ ul, li {
 figure p {
     text-align: center;
 }
+
+@media (max-width: 600px) {
+    .slide {
+        flex: 0 0 90%;
+    }
+
+    .slides {
+        padding: 10px;
+
+        
+    }
+
+    .mainArticles {
+        flex-direction: column;
+        gap: 0.5em;
+    }
+
+    body {
+        padding: 0 10px;
+    }
+}

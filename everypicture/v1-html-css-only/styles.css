@@ -1,0 +1,91 @@
+html body {
+    height: auto;
+}
+
+html {
+    background-image: url("images/everyPictureBG.png");
+
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+}
+
+body {
+    min-height: 100vh;
+    max-width: 800px;
+    margin: auto;
+}
+
+body #home_button {
+    position: fixed;
+    z-index: 4;
+    top: 10px;
+    left: 10px;
+
+    background-color: rgb(222, 184, 135);
+    padding: 0.1em;
+    border-color: burlywood;
+    border-style: groove;
+    border-width: 0.2em;
+    text-decoration: none;
+
+    display: inline-block;
+    height: auto;
+    max-width: 100%;
+}
+
+header, footer {
+    text-align: center;
+    padding: 25px;
+    margin: auto;
+    position: relative;
+}
+
+header h1 {
+    text-align: center;
+    color: rgb(47, 37, 0);
+    font-family: "Rubik 80s Fade", system-ui;;
+    font-weight: 100;
+    font-size: 2em;
+}
+
+.slideShow {
+    overflow-x: auto;
+    display: flex;
+}
+
+.slides {
+    display: flex;
+}
+
+.slide {
+    flex: 0 0 80%;
+    scroll-snap-align: center;
+    transition: transform 0.4s ease;
+}
+
+.slides img {
+    width: 100%;
+    height: auto;
+    border-radius: 8px;
+    transition: transform 0.5s ease;
+}
+
+.dropDown h2{
+    text-align: center;
+}
+
+.mainArticles {
+    display: flex;
+    justify-content: center;
+    gap: 1em;
+    margin-top: 1em;
+}
+
+.subArticles {
+    flex: 1;
+}
+
+.subArticles h3 {
+    text-align: center;
+}

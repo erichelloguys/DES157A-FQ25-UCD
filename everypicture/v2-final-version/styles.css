@@ -167,9 +167,9 @@ figure p {
     }
 
     .slides {
-        padding: 10px;
+        padding: 5px;
 
-        
+
     }
 
     .mainArticles {
@@ -178,6 +178,6 @@ figure p {
     }
 
     body {
-        padding: 0 10px;
+        padding: 0 5px;
     }
 }

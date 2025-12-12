@@ -7,35 +7,38 @@
 
         const slides = slidesContainer.querySelectorAll('.slide');
 
-        slides.forEach(function(slide){
-            const cloneFirst = slide.cloneNode(true);
+        const firstSlide = slides[0];
+        const lastSlide = slides[slides.length - 1];
 
-            cloneFirst.classList.add('clone');
-            slidesContainer.appendChild(cloneFirst);
+        const cloneFirst = firstSlide.cloneNode(true);
+        cloneFirst.classList.add('clone');
+        slidesContainer.appendChild(cloneFirst);
 
-            const cloneLast = slide.cloneNode(true);
-            cloneLast.classList.add('clone');
-            slidesContainer.insertBefore(cloneLast, slidesContainer.firstChild);
-        });
+        const cloneLast = lastSlide.cloneNode(true);
+        cloneLast.classList.add('clone');
+        slidesContainer.insertBefore(cloneLast, slidesContainer.firstChild);
 
         const slideWidth = slides[0].getBoundingClientRect().width;
 
-        slidesContainer.scrollLeft = slideWidth * slides.length;
+        const slideLength = slides.length;
+
+        slidesContainer.scrollLeft = slideWidth * slideLength;
 
         slidesContainer.addEventListener('scroll', function(){
+
             const maxLeft = slidesContainer.scrollWidth - slidesContainer.clientWidth;
 
             if (slidesContainer.scrollLeft <= 0){
   
-                slidesContainer.scrollLeft = slideWidth * slides.length;
+                slidesContainer.scrollLeft = slideWidth * slideLength;
 
             } else if (slidesContainer.scrollLeft >= maxLeft){
-                slidesContainer.scrollLeft = slideWidth * slides.length;
-
+                slidesContainer.scrollLeft = slideWidth;
             }
         });
 
         slidesContainer.addEventListener('click', function (event) {
+
             const img = event.target.closest('img');
             if (!img) {
                 return;
@@ -51,7 +54,17 @@
                 return;
             }
 
+            const expandText = slide.querySelector('p');
+
             dropDown.classList.toggle('open');
+
+            if (expandText) {
+                if(dropDown.classList.contains('open')){
+                    expandText.textContent = 'click to collapse';
+                } else {
+                    expandText.textContent = 'click to expand';
+                }
+            }
         });
 
     });

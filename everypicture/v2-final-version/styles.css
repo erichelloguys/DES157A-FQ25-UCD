@@ -4,7 +4,7 @@ html body {
 
 html {
     background-image: url("images/everyPictureBG.png");
-
+    background-attachment: fixed;
     background-size: cover;
     background-repeat: no-repeat;
     background-position: center;
@@ -61,6 +61,10 @@ ul, li {
     font-family: "Ubuntu", sans-serif;
 }
 
+.slide p {
+    font-family: "Ubuntu", sans-serif;
+}
+
 
 .slideShow {
     margin: auto;
@@ -83,16 +87,16 @@ ul, li {
     mask-image: linear-gradient(
         to right,
         transparent 0%,
-        black 15%,
-        black 85%,
+        black 5%,
+        black 95%,
         transparent 100%
     );
 
     -webkit-mask-image: linear-gradient(
         to right, 
         transparent 0%, 
-        black 15%, 
-        black 85%, 
+        black 5%, 
+        black 95%, 
         transparent 100%
     );
 
@@ -168,8 +172,6 @@ figure p {
 
     .slides {
         padding: 10px;
-
-
     }
 
     .mainArticles {

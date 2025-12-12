@@ -1,0 +1,43 @@
+html body {
+    background-image: url("../images/barman.png");
+}
+
+#graphics img {
+    will-change: transform;
+    object-fit: contain;
+    cursor: pointer;
+    position: absolute;
+    top: 25%;
+
+    max-width: 100%;
+    display: block;
+    height: auto;
+    margin: auto;
+}
+
+header, footer {
+    text-align: center;
+    padding: 25px;
+    margin: auto;
+    position: relative;
+}
+
+header h1 {
+    top: 0;
+    text-align: center;
+    color: rgb(231, 237, 189);
+    font-weight: 100;
+    font-size: 2em;
+}
+
+p {
+    font-size: 20px;
+    line-height: 40px;
+    margin-left: 40px;
+    margin-right: 20px;
+    color: rgb(46, 47, 38);
+}
+
+button {
+    z-index: 10;
+}

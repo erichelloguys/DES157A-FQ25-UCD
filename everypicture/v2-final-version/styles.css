@@ -123,7 +123,7 @@ ul, li {
 .slide:hover img {
     border: 0.5em solid rgb(255, 145, 0.9);
     opacity: 0.8;
-    transform: scale(1.1);
+    transform: scale(1.05);
     cursor: pointer;
 }
 
@@ -166,12 +166,31 @@ figure p {
 }
 
 @media (max-width: 600px) {
+    header h1 {
+        text-align: center;
+        color: rgb(47, 37, 0);
+        font-family: "Ubuntu", sans-serif;
+        font-weight: 100;
+        font-size: 2em;
+    }
+
     .slide {
         flex: 0 0 90%;
     }
 
     .slides {
         padding: 10px;
+    }
+
+    .slide:hover img {
+        border: 0.5em solid rgb(255, 145, 0.9);
+        opacity: 0.8;
+    }
+
+    .dropDown.open {
+        display: block;
+        transform: scale(1.05);
+        cursor: pointer;
     }
 
     .mainArticles {

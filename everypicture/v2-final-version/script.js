@@ -8,7 +8,7 @@
         const slides = slidesContainer.querySelectorAll('.slide');
 
         const firstSlide = slides[0];
-        const lastSlide = slides[slides.length - 1];
+        const lastSlide = slides[slides.length-1];
 
         const cloneFirst = firstSlide.cloneNode(true);
         cloneFirst.classList.add('clone');
@@ -21,8 +21,6 @@
         const slideWidth = slides[0].getBoundingClientRect().width;
 
         const slideLength = slides.length;
-
-        slidesContainer.scrollLeft = slideWidth * slideLength;
 
         slidesContainer.addEventListener('scroll', function(){
 
